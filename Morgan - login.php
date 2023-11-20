@@ -1,4 +1,8 @@
-  <title>Registration system PHP and MySQL</title>
+<?php include('server.php') ?>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Registration system PHP and MySQL</title>
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
@@ -22,3 +26,10 @@
         <p>
                 Not yet a member? <a href="register.php">Sign up</a>
         </p>
+  <p></p>
+        <p>
+                Project information page <a href="projectinfo.php" > project information </a>
+        </p>
+  </form>
+</body>
+</html>
