@@ -32,7 +32,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 $targetFile = $targetDirectory . basename($_FILES["file"]["name"]);
                 move_uploaded_file($_FILES["file"]["tmp_name"], $targetFile);
                 echo "Target file path: " . $targetFile . "<br>";
-                $db = new mysqli('localhost', 'root', 'morganclapsaddle', 'project');
+                $db = new mysqli('localhost', 'root', 'PASSWORD', 'project');
 
                 if ($db->connect_error) {
                         die("Connection failed: " . $db->connect_error);
@@ -67,7 +67,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         } else if (isset($_POST["search"])) {
 
                 $username = $_SESSION['username'];
-                $db = new mysqli('localhost', 'root', 'morganclapsaddle', 'project');
+                $db = new mysqli('localhost', 'root', 'PASSWORD', 'project');
 
                 if ($db->connect_error) {
                         die("Connection failed: " . $db->connect_error);
@@ -225,7 +225,7 @@ if (isset($_GET["delete"])) {
 
         // Display a dropdown menu of user's files for selection
         $username = $_SESSION['username'];
-        $db = new mysqli('localhost', 'root', 'morganclapsaddle', 'project');
+        $db = new mysqli('localhost', 'root', 'PASSWORD', 'project');
 
         if ($db->connect_error) {
             die("Connection failed: " . $db->connect_error);
@@ -268,7 +268,7 @@ if (isset($_GET["delete"])) {
         $username = $_SESSION['username'];
        //       $id = $_SESSION['id'];
         $id = (int)$_SESSION['id'];
-         $db = new mysqli('localhost', 'root', 'morganclapsaddle', 'project');
+         $db = new mysqli('localhost', 'root', 'PASSWORD', 'project');
 
         if ($db->connect_error) {
             die("Connection failed: " . $db->connect_error);
@@ -297,7 +297,7 @@ if (isset($_GET["delete"])) {
     }
 
 
-        $db = new mysqli('localhost', 'root', 'morganclapsaddle', 'project');
+        $db = new mysqli('localhost', 'root', 'PASSWORD', 'project');
         $query = "SELECT id FROM users WHERE username = ?";
         $stmt = $db->prepare($query);
         $stmt->bind_param("s", $username);
