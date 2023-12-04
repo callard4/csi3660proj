@@ -37,7 +37,12 @@ Helped with...
 <p>Screenshots:</p>
 <p></p>
 <p> References: </P>
-https://www.sqlshack.com/how-to-backup-and-restore-mysql-databases-using-the-mysqldump-command/
+<li>https://www.sqlshack.com/how-to-backup-and-restore-mysql-databases-using-the-mysqldump-command/</li>
+<li>https://www.youtube.com/watch?v=O0ttkT9Uc6k</li>
+<li>https://www.youtube.com/watch?v=BynKYxwauPQ</li>
+<li>https://www.youtube.com/watch?v=3Hz5WanrhuE</li>
+<li>https://www.youtube.com/watch?v=FMC2YiauXRs</li>
+<li>https://iq.opengenus.org/automated-backup-in-linux-using-shell-scripting-and-crontab-scheduler/#google_vignette</li>
 <p></p>
   
 Already a member? <a href="login.php">Sign in</a>
