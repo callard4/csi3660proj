@@ -57,3 +57,56 @@ if (isset($_POST['reg_user'])) {
 
         $queryGetID = "SELECT id FROM users WHERE username='$username' LIMIT 1";
         $result = mysqli_query($db, $queryGetID);
+         $user = mysqli_fetch_assoc($result);
+
+        if ($user) {
+                $_SESSION['id'] = $user['id'];
+        }
+
+        $_SESSION['username'] = $username;
+        $_SESSION['success'] = "You are now logged in";
+        header('location: index.php');
+  }
+}
+// LOGIN USER
+if (isset($_POST['login_user'])) {
+        $username = mysqli_real_escape_string($db, $_POST['username']);
+        $password = mysqli_real_escape_string($db, $_POST['password']);
+
+        if (empty($username)) {
+                array_push($errors, "Username is required");
+        }
+        if (empty($password)) {
+                array_push($errors, "Password is required");
+        }
+
+        if (count($errors) == 0) {
+
+                $query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
+                $results = mysqli_query($db, $query);
+                if (mysqli_num_rows($results) == 1) {
+                        $_SESSION['username'] = $username;
+                        $_SESSION['id'] = $users['id'];
+                        $_SESSION['id'] = $id;
+                        $_SESSION['success'] = "You are now logged in";
+                        header('location: index.php');
+                }else {
+                        array_push($errors, "Wrong username/password combination");
+                  }
+        }
+        $username = $_POST['username'];
+
+        $login_time = new DateTime('now', new DateTimeZone('America/New_York'));
+        $login_time_formatted = $login_time->format('Y-m-d H:i:s');
+
+
+        $update_query = "UPDATE users SET last_login = ? WHERE username = ?";
+        $stmt = $db->prepare($update_query);
+        $stmt->bind_param('ss', $login_time_formatted, $username);
+        $stmt->execute();
+        $stmt->close();
+        $db->close();
+
+}
+
+?>               
