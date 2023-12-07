@@ -1,0 +1,4 @@
+For our backup strategy, we chose to backup the files at 11 p.m. every night. We think this makes the most s
+ense because most people are done uploading their files, deleting their files, etc. by 11 p.m. every night.
+We also chose to have the system delete the backup file 7 days after it was initally created in order to sav
+e space for storage. We chose to have all of our files in /var/www/html backed.
