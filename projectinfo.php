@@ -22,7 +22,7 @@ Our service is a web server to upload and retrive files. We used php and htlm to
 </p>
 <p> 
 Robert Martin:
-I worked on the database log as well as the PHP scripts to register, login, and upload the file.
+I helped with the development of the login and registering screens as well as the change logs of the database by making 2 separate files that declare whether a change was successful or not. It will also give the date that the files were uploaded, as well as an information or error message.
 </p>
 <p>
 Morgan Clapsaddle:
