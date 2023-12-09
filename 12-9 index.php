@@ -33,7 +33,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 $targetDirectory = "uploads/";
                 $targetFile = $targetDirectory . basename($_FILES["file"]["name"]);
                 move_uploaded_file($_FILES["file"]["tmp_name"], $targetFile);
-                $db = new mysqli('localhost', 'root', 'morganclapsaddle', 'project');
+                $db = new mysqli('localhost', 'root', 'PASSWORD', 'project');
 
                 if ($db->connect_error) {
                         logEvent("Failed", "File uploaded by user: $username, File: $targetFile");
@@ -65,7 +65,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         } else if (isset($_POST["search"])) {
 
                 $username = $_SESSION['username'];
-                $db = new mysqli('localhost', 'root', 'morganclapsaddle', 'project');
+                $db = new mysqli('localhost', 'root', 'PASSWORD', 'project');
 
                 if ($db->connect_error) {
                         die("Connection failed: " . $db->connect_error);
@@ -114,7 +114,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
                         // Remove the file path from the database
                         $username = $_SESSION['username'];
-                        $db = new mysqli('localhost', 'root', 'morganclapsaddle', 'project');
+                        $db = new mysqli('localhost', 'root', 'PASSWORD', 'project');
                         if ($db->connect_error) {
                                 die("Connection failed: " . $db->connect_error);
                         }
@@ -221,7 +221,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
         // Display a dropdown menu of user's files for selection
         $username = $_SESSION['username'];
-        $db = new mysqli('localhost', 'root', 'morganclapsaddle', 'project');
+        $db = new mysqli('localhost', 'root', 'PASSWORD', 'project');
 
         if ($db->connect_error) {
             die("Connection failed: " . $db->connect_error);
@@ -266,7 +266,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 $username = $_SESSION['username'];
 
                 $id = (int)$_SESSION['id'];
-                $db = new mysqli('localhost', 'root', 'morganclapsaddle', 'project');
+                $db = new mysqli('localhost', 'root', 'PASSWORD', 'project');
 
                 }f ($db->connect_error) {
 
@@ -291,7 +291,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     }
 
-        $db = new mysqli('localhost', 'root', 'morganclapsaddle', 'project');
+        $db = new mysqli('localhost', 'root', 'PASSWORD', 'project');
         $query = "SELECT id FROM users WHERE username = ?";
         $query = "SELECT id FROM users WHERE username = ?";
         $query = "SELECT id FROM users WHERE username = ?";
