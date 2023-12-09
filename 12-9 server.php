@@ -9,7 +9,7 @@ $email    = "";
 $errors = array();
 
 // connect to the database
-$db = mysqli_connect('localhost', 'root', 'morganclapsaddle', 'project');
+$db = mysqli_connect('localhost', 'root', 'PASSWORD', 'project');
 
 
 // REGISTER USER
